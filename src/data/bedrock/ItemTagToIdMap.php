@@ -48,7 +48,7 @@ final class ItemTagToIdMap{
 		ProtocolInfo::CURRENT_PROTOCOL => "",
 		ProtocolInfo::PROTOCOL_1_26_40 => "",
 		ProtocolInfo::PROTOCOL_1_26_30 => "",
-		ProtocolVersionMapper::PROTOCOL_1_26_33 => "",
+		ProtocolVersionMapper::PROTOCOL_1_26_44 => "",
 		ProtocolInfo::PROTOCOL_1_26_20 => "",
 		ProtocolInfo::PROTOCOL_1_26_10 => "",
 		ProtocolInfo::PROTOCOL_1_26_0 => "",
