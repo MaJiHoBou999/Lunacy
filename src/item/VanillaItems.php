@@ -308,6 +308,7 @@ use function strtolower;
  * @method static Item SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE()
  * @method static Item SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE()
  * @method static Shears SHEARS()
+ * @method static Shield SHIELD()
  * @method static Item SHULKER_SHELL()
  * @method static Item SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE()
  * @method static Item SLIMEBALL()
@@ -607,6 +608,7 @@ final class VanillaItems{
 		self::register("rotten_flesh", fn(IID $id) => new RottenFlesh($id, "Rotten Flesh"));
 		self::register("scute", fn(IID $id) => new Item($id, "Scute"));
 		self::register("shears", fn(IID $id) => new Shears($id, "Shears", [EnchantmentTags::SHEARS]));
+		self::register("shield", fn(IID $id) => new Shield($id, "Shield"));
 		self::register("shulker_shell", fn(IID $id) => new Item($id, "Shulker Shell"));
 		self::register("slimeball", fn(IID $id) => new Item($id, "Slimeball"));
 		self::register("snowball", fn(IID $id) => new Snowball($id, "Snowball"));
@@ -843,5 +845,4 @@ final class VanillaItems{
 		self::register("wayfinder_armor_trim_smithing_template", fn(IID $id) => new Item($id, "Wayfinder Armor Trim Smithing Template"));
 		self::register("wild_armor_trim_smithing_template", fn(IID $id) => new Item($id, "Wild Armor Trim Smithing Template"));
 	}
-
 }
