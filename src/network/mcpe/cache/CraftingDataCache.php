@@ -12,8 +12,9 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * @author Karepanov
+ * @author Karepanov, MaJiHoBou
  * @link https://github.com/karepanov35/Lunacy
+ * @link https://github.com/MaJiHoBou999/Lunacy
  *
  *
  */
@@ -27,6 +28,8 @@ use pocketmine\crafting\FurnaceType;
 use pocketmine\crafting\ShapedRecipe;
 use pocketmine\crafting\ShapelessRecipe;
 use pocketmine\crafting\ShapelessRecipeType;
+use pocketmine\crafting\SmithingTransformRecipe;
+use pocketmine\crafting\SmithingTrimRecipe;
 use pocketmine\data\bedrock\item\ItemTypeSerializeException;
 use pocketmine\data\bedrock\ItemTagDowngrader;
 use pocketmine\network\mcpe\convert\TypeConverter;
@@ -140,8 +143,35 @@ final class CraftingDataCache{
 						continue;
 					}
 				}
-			}else{
-				//TODO: probably special recipe types
+			}elseif($recipe instanceof SmithingTransformRecipe){
+				try{
+					$recipesWithTypeIds[] = new \pocketmine\network\mcpe\protocol\types\recipe\SmithingTransformRecipe(
+						CraftingDataPacket::ENTRY_SMITHING_TRANSFORM,
+						BE::packUnsignedInt($recipeNetId),
+						$converter->coreRecipeIngredientToNet($recipe->getTemplate()),
+						$converter->coreRecipeIngredientToNet($recipe->getInput()),
+						$converter->coreRecipeIngredientToNet($recipe->getAddition()),
+						$converter->coreItemStackToNet($recipe->getOutput()),
+						\pocketmine\network\mcpe\protocol\types\recipe\CraftingRecipeBlockName::SMITHING_TABLE,
+						$recipeNetId
+					);
+				}catch(\InvalidArgumentException|ItemTypeSerializeException){
+					continue;
+				}
+			}elseif($recipe instanceof SmithingTrimRecipe){
+				try{
+					$recipesWithTypeIds[] = new \pocketmine\network\mcpe\protocol\types\recipe\SmithingTrimRecipe(
+						CraftingDataPacket::ENTRY_SMITHING_TRIM,
+						BE::packUnsignedInt($recipeNetId),
+						$converter->coreRecipeIngredientToNet($recipe->getTemplate()),
+						$converter->coreRecipeIngredientToNet($recipe->getInput()),
+						$converter->coreRecipeIngredientToNet($recipe->getAddition()),
+						\pocketmine\network\mcpe\protocol\types\recipe\CraftingRecipeBlockName::SMITHING_TABLE,
+						$recipeNetId
+					);
+				}catch(\InvalidArgumentException|ItemTypeSerializeException){
+					continue;
+				}
 			}
 		}
 
