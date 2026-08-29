@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/IMG_1341.png" width="600" />
+  <img src="assets/IMG_1341.png" width="800" />
 
 <p align="center">
   <a href="https://github.com/karepanov35/Lunacy/releases"><img src="https://img.shields.io/github/v/release/karepanov35/Lunacy?label=release" alt="release"></a>
