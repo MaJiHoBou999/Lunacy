@@ -1,9 +1,11 @@
 <p align="center">
-  <img src="assets/26D583B2-1258-4CF0-9A93-D5BF9758CDC3.jpeg" width="600" />
+  <img src="assets/IMG_1341.png" width="1200" />
 
 <p align="center">
   <a href="https://github.com/karepanov35/Lunacy/releases"><img src="https://img.shields.io/github/v/release/karepanov35/Lunacy?label=release" alt="release"></a>
   <a href="https://github.com/karepanov35/Lunacy/releases/latest"><img src="https://img.shields.io/github/downloads/karepanov35/Lunacy/latest/total?label=downloads@latest" alt="downloads@latest"></a>
+  <img src="https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php&logoColor=white" alt="PHP 8.1+">
+  <img src="https://img.shields.io/badge/MC%20Bedrock-1.20.0%E2%80%931.26-5BAA3C?logo=xbox&logoColor=white" alt="Minecraft Bedrock 1.20.0–1.26">
 </p>
 
 
